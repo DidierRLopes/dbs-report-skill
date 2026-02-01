@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DBS Group Research - US Equity Research - Nvidia Corp</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 25mm 20mm;
+  }
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page-break { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Calibri, 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.35;
+    color: #000000;
+    background: #FFFFFF;
+  }
+  .page {
+    width: 170mm;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 20mm;
+  }
+  .page-header {
+    text-align: right;
+    font-size: 9pt;
+    color: #000000;
+    margin-bottom: 8px;
+    font-weight: normal;
+  }
+  .page-footer {
+    font-size: 7pt;
+    color: #000000;
+    line-height: 1.3;
+    border-top: 0.5px solid #CC3333;
+    padding-top: 4px;
+    margin-top: auto;
+    position: relative;
+  }
+  .dbs-logo {
+    text-align: right;
+    margin-top: 8px;
+    font-size: 18pt;
+    font-weight: bold;
+  }
+  .dbs-logo .star { color: #ED1C24; }
+  .dbs-logo .text { color: #000000; }
+  .title-banner {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 6px 12px;
+    font-size: 18pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  .report-date {
+    text-align: right;
+    font-size: 10pt;
+    margin-bottom: 10px;
+  }
+  .cover-layout {
+    display: flex;
+    gap: 20px;
+  }
+  .cover-left {
+    flex: 0 0 58%;
+    max-width: 58%;
+  }
+  .cover-right {
+    flex: 0 0 38%;
+    max-width: 38%;
+  }
+  .company-name {
+    font-size: 18pt;
+    font-weight: normal;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-size: 10pt;
+    font-weight: normal;
+    margin-bottom: 14px;
+    color: #000000;
+  }
+  .analyst-block {
+    font-size: 9pt;
+    margin-bottom: 14px;
+  }
+  .analyst-block .label {
+    color: #666666;
+  }
+  .section-header {
+    font-size: 11pt;
+    font-weight: normal;
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 2px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+  .body-text {
+    text-align: justify;
+    font-size: 9.5pt;
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .body-text .lead-in {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .kfd-title {
+    font-size: 11pt;
+    font-weight: normal;
+    margin-bottom: 6px;
+  }
+  .kfd-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+  }
+  .kfd-table td {
+    padding: 2px 0;
+    border-bottom: 0.5px solid #E0E0E0;
+  }
+  .kfd-table td:first-child {
+    text-align: left;
+  }
+  .kfd-table td:last-child {
+    text-align: right;
+    font-weight: normal;
+  }
+  .kfd-source {
+    font-size: 8pt;
+    font-style: italic;
+    margin-top: 2px;
+    margin-bottom: 10px;
+  }
+  .kfd-closing {
+    font-size: 8pt;
+    font-style: italic;
+    margin-bottom: 2px;
+  }
+  .chart-title {
+    font-size: 9pt;
+    font-weight: normal;
+    margin-bottom: 4px;
+  }
+  .chart-source {
+    font-size: 8pt;
+    margin-top: 2px;
+  }
+  .fin-section-title {
+    font-size: 10pt;
+    font-weight: normal;
+    margin-bottom: 4px;
+    margin-top: 14px;
+  }
+  .fin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+    margin-bottom: 4px;
+  }
+  .fin-table thead th {
+    font-weight: bold;
+    text-align: right;
+    padding: 3px 6px;
+    border-bottom: 1px solid #000000;
+    font-size: 9pt;
+  }
+  .fin-table thead th:first-child {
+    text-align: left;
+  }
+  .fin-table tbody td {
+    text-align: right;
+    padding: 2px 6px;
+    border-bottom: 0.5px solid #E0E0E0;
+  }
+  .fin-table tbody td:first-child {
+    text-align: left;
+  }
+  .fin-table .sub-row td:first-child {
+    padding-left: 15px;
+    font-style: italic;
+  }
+  .fin-table .sub-row td {
+    font-style: italic;
+  }
+  .fin-table .gap-row td {
+    border-bottom: none;
+    padding: 4px 0;
+  }
+  .fin-source {
+    font-size: 8pt;
+    margin-bottom: 10px;
+  }
+  .tp-section-title {
+    font-size: 11pt;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 8px;
+  }
+  .tp-layout {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  .tp-chart { flex: 0 0 55%; }
+  .tp-table-wrap { flex: 0 0 42%; }
+  .tp-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8pt;
+  }
+  .tp-history-table thead th {
+    background-color: #CC3333;
+    color: #FFFFFF;
+    padding: 3px 4px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 7.5pt;
+  }
+  .tp-history-table tbody td {
+    padding: 3px 4px;
+    text-align: center;
+    border-bottom: 0.5px solid #E0E0E0;
+    font-size: 8pt;
+  }
+  .tp-attribution {
+    font-size: 8pt;
+    margin-top: 6px;
+    margin-bottom: 12px;
+  }
+  .rating-box {
+    border: 1px solid #000000;
+    padding: 8px 10px;
+    font-size: 8.5pt;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  .rating-box .rating-name {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .rating-box .footnote {
+    font-style: italic;
+    margin-top: 4px;
+  }
+  .disclaimer-section-header {
+    font-size: 10pt;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .disclaimer-sub-header {
+    font-size: 9.5pt;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+  .disclaimer-text {
+    font-size: 9pt;
+    line-height: 1.4;
+    text-align: justify;
+    margin-bottom: 8px;
+  }
+  .restrictions-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+    margin-bottom: 8px;
+  }
+  .restrictions-table td {
+    padding: 6px 8px;
+    vertical-align: top;
+  }
+  .restrictions-table td:first-child {
+    width: 15%;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .offices-title {
+    font-size: 10pt;
+    font-weight: bold;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 2px;
+    margin-top: 16px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+  .offices-grid {
+    display: flex;
+    gap: 30px;
+    font-size: 9pt;
+  }
+  .offices-grid .office {
+    flex: 1;
+  }
+  .offices-grid .office-region {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .offices-grid .office-name {
+    font-weight: bold;
+  }
+  .footnote-section {
+    border-top: 1px solid #000000;
+    margin-top: 20px;
+    padding-top: 6px;
+    font-size: 7pt;
+    line-height: 1.3;
+  }
+  .chart-container svg {
+    width: 100%;
+    height: auto;
+  }
+  .chart-container svg text {
+    font-family: Calibri, 'Segoe UI', Arial, Helvetica, sans-serif;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     PAGE 1: COVER PAGE
+     ============================================================ -->
+<div class="page" id="page1">
+  <div class="page-header">DBS Group Research</div>
+
+  <div class="title-banner">US EQUITY RESEARCH</div>
+  <div class="report-date">01 February 2026</div>
+
+  <div class="cover-layout">
+
+    <!-- LEFT COLUMN: Narrative -->
+    <div class="cover-left">
+      <div class="company-name">Nvidia Corp</div>
+      <div class="subtitle">AI infrastructure dominance drives sustained hypergrowth</div>
+
+      <div class="section-header">Company Overview</div>
+      <p class="body-text">Nvidia Corp (NVDA) is the world's leading designer of graphics processing units (GPUs) and accelerated computing platforms. The company operates through two segments: Compute &amp; Networking (89% of FY2025 revenue) and Graphics (11%). Data Center is the primary growth engine, contributing USD115.2bn or 88% of FY2025 revenue, encompassing AI training and inference accelerators, networking solutions (including Mellanox InfiniBand and Ethernet), and DGX systems. Gaming (USD11.4bn, 9%), Professional Visualization (USD1.9bn, 1%), and Automotive (USD1.7bn, 1%) comprise the remainder. Geographically, the United States accounts for 47% of revenue, followed by Singapore (18%), Taiwan (16%), and China including Hong Kong (13%). NVDA is headquartered in Santa Clara, California and employs approximately 36,000 people.</p>
+
+      <div class="section-header">Investment Overview</div>
+      <p class="body-text">
+        <span class="lead-in">Blackwell architecture ramp positions NVDA for another year of exceptional growth.</span> NVDA's next-generation Blackwell GPU platform began shipping in volume during Q4 FY2025, with data center revenue reaching USD115.2bn for the full year, up 142% y/y. We expect the Blackwell ramp to drive FY2026F data center revenue to approximately USD175bn as hyperscale customers including Microsoft, Amazon, Google, and Meta continue to expand their AI infrastructure spending. The Blackwell B200 and GB200 NVL72 systems offer a step-function improvement in inference performance, unlocking new enterprise AI workloads.
+      </p>
+      <p class="body-text">
+        <span class="lead-in">Unmatched competitive moat in AI accelerators underpins premium valuation.</span> NVDA's CUDA software ecosystem, which now encompasses over 5 million developers, creates significant switching costs that sustain the company's estimated 80%+ market share in AI training accelerators. Gross margins expanded to 75.0% in FY2025, up from 72.7% in FY2024, reflecting pricing power and scale efficiencies. With R&amp;D spending of USD12.9bn (10% of revenue), NVDA continues to invest aggressively in next-generation platforms including the Rubin architecture expected in 2026, maintaining its one-year product cadence advantage over AMD and custom silicon alternatives.
+      </p>
+      <p class="body-text">
+        <span class="lead-in">Capital return programme demonstrates confidence in sustained free cash flow generation.</span> NVDA generated USD60.9bn of free cash flow in FY2025, up 125% y/y, and returned USD33.2bn through share repurchases and USD0.8bn in dividends. The balance sheet remains fortress-like with net cash of USD33.2bn and a debt-to-equity ratio of just 0.09x. We expect FCF to reach approximately USD90bn in FY2026F, supporting continued aggressive buybacks.
+      </p>
+      <p class="body-text">
+        <span class="lead-in">We are BUY on NVDA with a 12-month target price of USD220.</span> Our target is based on 38x FY2027F EV/EBITDA, representing a modest discount to the trailing 3-year average of 42x, which we believe is justified given the decelerating (albeit still robust) revenue growth trajectory. At our target price, NVDA would trade at approximately 39x FY2027F earnings, implying 15% upside from the current price of USD191.13.
+      </p>
+
+      <div class="section-header">Risks</div>
+      <p class="body-text">
+        <span class="lead-in">Concentration risk and geopolitical headwinds represent key downside factors.</span> NVDA derives approximately 13% of revenue from China (including Hong Kong), and further US export restrictions on advanced AI chips could compress the addressable market. Additionally, the top four hyperscale customers account for an estimated 40%+ of data center revenue, creating concentration risk. The emergence of competitive custom silicon (Google TPUs, Amazon Trainium, Microsoft Maia) could erode NVDA's market share over time, particularly in inference workloads. A broader slowdown in enterprise AI spending, potentially triggered by ROI scrutiny on large language model deployments, could temper growth expectations.
+      </p>
+    </div>
+
+    <!-- RIGHT COLUMN: Data Sidebar -->
+    <div class="cover-right">
+      <div class="analyst-block">
+        <div class="label">Analyst:</div>
+        <div>DBS US Research Team | usequity@dbs.com</div>
+      </div>
+
+      <div class="kfd-title">Key Financial Data</div>
+      <table class="kfd-table">
+        <tr><td>Bloomberg Ticker</td><td>NVDA US</td></tr>
+        <tr><td>Sector</td><td>Information Technology</td></tr>
+        <tr><td>Share Price (USD)</td><td>191.13</td></tr>
+        <tr><td>DBS Rating</td><td>BUY</td></tr>
+        <tr><td>12-mth Target Price (USD)</td><td>220.00</td></tr>
+        <tr><td>Market Cap (USDbn)</td><td>4,645.4</td></tr>
+        <tr><td>Volume (mn shares)</td><td>179.5</td></tr>
+        <tr><td>Free float (%)</td><td>96.8</td></tr>
+        <tr><td>Dividend yield (%)</td><td>0.0</td></tr>
+        <tr><td>Net Debt to Equity (%)</td><td>(41.9)</td></tr>
+        <tr><td>Fwd. P/E (x)</td><td>43.4</td></tr>
+        <tr><td>P/Book (x)</td><td>39.1</td></tr>
+        <tr><td>ROE (%)</td><td>83.4</td></tr>
+      </table>
+      <div class="kfd-closing"><em>Closing Price as of 31 Jan 2026</em></div>
+      <div class="kfd-source">Source: Bloomberg, DBS</div>
+
+      <div class="chart-title">Indexed Share Price vs Composite Index Performance</div>
+      <div class="chart-container">
+        <svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg">
+          <!-- Legend -->
+          <line x1="50" y1="10" x2="70" y2="10" stroke="#D4A843" stroke-width="2"/>
+          <text x="73" y="13" font-size="7" fill="#000">NVDA</text>
+          <line x1="120" y1="10" x2="140" y2="10" stroke="#333333" stroke-width="2"/>
+          <text x="143" y="13" font-size="7" fill="#000">S&amp;P 500</text>
+          <!-- Y-axis label -->
+          <text x="2" y="22" font-size="6" fill="#666">(indexed)</text>
+          <!-- Gridlines -->
+          <line x1="40" y1="30" x2="290" y2="30" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="55" x2="290" y2="55" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="80" x2="290" y2="80" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="105" x2="290" y2="105" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="130" x2="290" y2="130" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="155" x2="290" y2="155" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="180" x2="290" y2="180" stroke="#E0E0E0" stroke-width="0.5"/>
+          <!-- Y-axis labels -->
+          <text x="36" y="33" font-size="6" fill="#666" text-anchor="end">350</text>
+          <text x="36" y="58" font-size="6" fill="#666" text-anchor="end">300</text>
+          <text x="36" y="83" font-size="6" fill="#666" text-anchor="end">250</text>
+          <text x="36" y="108" font-size="6" fill="#666" text-anchor="end">200</text>
+          <text x="36" y="133" font-size="6" fill="#666" text-anchor="end">150</text>
+          <text x="36" y="158" font-size="6" fill="#666" text-anchor="end">100</text>
+          <text x="36" y="183" font-size="6" fill="#666" text-anchor="end">50</text>
+          <!-- X-axis labels -->
+          <text x="40" y="193" font-size="6" fill="#666">Jan-24</text>
+          <text x="102" y="193" font-size="6" fill="#666">Jul-24</text>
+          <text x="165" y="193" font-size="6" fill="#666">Jan-25</text>
+          <text x="227" y="193" font-size="6" fill="#666">Jul-25</text>
+          <text x="275" y="193" font-size="6" fill="#666">Jan-26</text>
+          <!-- NVDA line (indexed: Jan24=100, Jan26=310.6) -->
+          <!-- Y mapping: val=350 -> y=30, val=50 -> y=180, scale: (350-val)/(350-50)*150 + 30 -->
+          <polyline fill="none" stroke="#D4A843" stroke-width="1.8"
+            points="40,155 50.4,146.4 60.8,140.9 71.3,142.8 81.7,131.4 92.1,124.6 102.5,127.8 112.9,126.7 123.3,125.7 133.8,119.2 144.2,116.5 154.6,118.4 165,121.4 175.4,118.9 185.8,127.0 196.3,126.7 206.7,118.8 217.1,107.6 227.5,97.9 237.9,99.1 248.3,93.1 258.8,85.3 269.2,97.7 279.6,93.1 290,91.9"/>
+          <!-- S&P 500 line -->
+          <polyline fill="none" stroke="#333333" stroke-width="1.8"
+            points="40,155 50.4,153.4 60.8,152.4 71.3,153.6 81.7,152.0 92.1,150.8 102.5,150.4 112.9,149.6 123.3,149.5 133.8,150.0 144.2,148.3 154.6,149.5 165,148.0 175.4,149.5 185.8,151.3 196.3,150.4 206.7,148.3 217.1,147.0 227.5,146.2 237.9,146.5 248.3,145.6 258.8,144.5 269.2,146.0 279.6,145.1 290,144.7"/>
+          <!-- Axes -->
+          <line x1="40" y1="30" x2="40" y2="180" stroke="#999" stroke-width="0.5"/>
+          <line x1="40" y1="180" x2="290" y2="180" stroke="#999" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="chart-source">Source: Bloomberg</div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    Disclaimer: The information contained in this document is intended only for use by the person to whom it has been delivered and should not be disseminated
+    or distributed to third parties without our prior written consent. DBS accepts no liability whatsoever with respect to the use of this document or its contents.
+    Please refer to Disclaimer found at the end of this document
+  </div>
+  <div class="dbs-logo"><span class="star">&#10070;</span><span class="text">DBS</span></div>
+</div>
+
+
+<!-- ============================================================
+     PAGE 2: FINANCIAL TABLES
+     ============================================================ -->
+<div class="page page-break" id="page2">
+  <div class="page-header">DBS Group Research</div>
+
+  <div class="fin-section-title">Financial Summary (USDmn)</div>
+  <table class="fin-table">
+    <thead>
+      <tr>
+        <th>FY Jan</th>
+        <th>FY2023A</th>
+        <th>FY2024A</th>
+        <th>FY2025A</th>
+        <th>FY2026F</th>
+        <th>FY2027F</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Sales</td><td>26,974</td><td>60,922</td><td>130,497</td><td>200,000</td><td>260,000</td></tr>
+      <tr class="sub-row"><td>% y/y</td><td>0.2</td><td>125.9</td><td>114.2</td><td>53.3</td><td>30.0</td></tr>
+      <tr><td>Gross Profit</td><td>15,356</td><td>44,301</td><td>97,858</td><td>148,000</td><td>189,800</td></tr>
+      <tr class="sub-row"><td>% y/y</td><td>(12.1)</td><td>188.5</td><td>120.9</td><td>51.2</td><td>28.2</td></tr>
+      <tr><td>EBITDA</td><td>5,768</td><td>34,480</td><td>83,317</td><td>129,000</td><td>165,800</td></tr>
+      <tr class="sub-row"><td>% y/y</td><td>(48.6)</td><td>497.8</td><td>141.6</td><td>54.8</td><td>28.5</td></tr>
+      <tr><td>Net Profit (Loss)</td><td>4,368</td><td>29,760</td><td>72,880</td><td>108,000</td><td>138,000</td></tr>
+      <tr class="sub-row"><td>% y/y</td><td>(55.2)</td><td>581.3</td><td>144.9</td><td>48.2</td><td>27.8</td></tr>
+      <tr><td>FCF</td><td>3,808</td><td>27,021</td><td>60,853</td><td>90,000</td><td>115,000</td></tr>
+      <tr class="sub-row"><td>% y/y</td><td>(53.2)</td><td>609.6</td><td>125.2</td><td>47.9</td><td>27.8</td></tr>
+      <tr><td>CAPEX</td><td>1,833</td><td>1,069</td><td>3,236</td><td>8,000</td><td>12,000</td></tr>
+      <tr class="sub-row"><td>% y/y</td><td>87.8</td><td>(41.7)</td><td>202.7</td><td>147.2</td><td>50.0</td></tr>
+      <tr class="gap-row"><td colspan="6"></td></tr>
+      <tr><td>EBITDA Margin (%)</td><td>21.4</td><td>56.6</td><td>63.8</td><td>64.5</td><td>63.8</td></tr>
+      <tr><td>Net Margin (%)</td><td>16.2</td><td>48.8</td><td>55.8</td><td>54.0</td><td>53.1</td></tr>
+      <tr><td>ROA (%)</td><td>10.3</td><td>55.7</td><td>78.8</td><td>65.0</td><td>55.0</td></tr>
+      <tr><td>ROE (%)</td><td>18.7</td><td>92.8</td><td>115.4</td><td>85.0</td><td>70.0</td></tr>
+      <tr><td>Tax Rate (%)</td><td>nm</td><td>12.0</td><td>13.3</td><td>13.5</td><td>13.5</td></tr>
+    </tbody>
+  </table>
+  <div class="fin-source">Source: Visible Alpha</div>
+
+  <div class="fin-section-title">Valuation Metrics</div>
+  <table class="fin-table">
+    <thead>
+      <tr>
+        <th>FY Jan</th>
+        <th>FY2023A</th>
+        <th>FY2024A</th>
+        <th>FY2025A</th>
+        <th>FY2026F</th>
+        <th>FY2027F</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>P/E</td><td>114.7</td><td>50.7</td><td>47.9</td><td>43.0</td><td>33.7</td></tr>
+      <tr><td>P/B</td><td>22.7</td><td>35.1</td><td>44.0</td><td>35.0</td><td>28.0</td></tr>
+      <tr><td>Dividend Yield</td><td>0.1</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+      <tr><td>EV/EBITDA (x)</td><td>85.2</td><td>42.5</td><td>40.6</td><td>35.2</td><td>27.6</td></tr>
+      <tr><td>FCF Yield %</td><td>0.8</td><td>1.8</td><td>1.7</td><td>1.9</td><td>2.5</td></tr>
+    </tbody>
+  </table>
+  <div class="fin-source">Source: Visible Alpha</div>
+
+  <div class="fin-section-title">Credit &amp; Cashflow Metrics</div>
+  <table class="fin-table">
+    <thead>
+      <tr>
+        <th>FY Jan</th>
+        <th>FY2023A</th>
+        <th>FY2024A</th>
+        <th>FY2025A</th>
+        <th>FY2026F</th>
+        <th>FY2027F</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Debt / Equity</td><td>0.54</td><td>0.25</td><td>0.13</td><td>0.08</td><td>0.05</td></tr>
+      <tr><td>Net Debt / Equity</td><td>(0.07)</td><td>(0.35)</td><td>(0.42)</td><td>(0.50)</td><td>(0.55)</td></tr>
+      <tr><td>Debt / Assets</td><td>0.29</td><td>0.16</td><td>0.09</td><td>0.06</td><td>0.04</td></tr>
+      <tr><td>Net Debt / Assets</td><td>(0.04)</td><td>(0.23)</td><td>(0.30)</td><td>(0.35)</td><td>(0.38)</td></tr>
+      <tr><td>EBITDA / Int Exp</td><td>22.0</td><td>134.2</td><td>337.1</td><td>530.0</td><td>670.0</td></tr>
+      <tr><td>Debt / EBITDA</td><td>2.06</td><td>0.31</td><td>0.12</td><td>0.06</td><td>0.04</td></tr>
+      <tr><td>ST Debt / Total Debt (%)</td><td>10.5</td><td>11.5</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+      <tr><td>[Cash + CFO] / ST Debt</td><td>7.2</td><td>28.3</td><td>nm</td><td>nm</td><td>nm</td></tr>
+      <tr><td>Receivables Days</td><td>51.8</td><td>59.9</td><td>64.5</td><td>60.0</td><td>58.0</td></tr>
+      <tr><td>Days Payable</td><td>37.5</td><td>59.3</td><td>70.6</td><td>65.0</td><td>62.0</td></tr>
+      <tr><td>Inventory Days</td><td>162.1</td><td>116.0</td><td>112.8</td><td>105.0</td><td>100.0</td></tr>
+    </tbody>
+  </table>
+  <div class="fin-source">Source: Visible Alpha</div>
+
+  <div class="page-footer">
+    Disclaimer: The information contained in this document is intended only for use by the person to whom it has been delivered and should not be disseminated
+    or distributed to third parties without our prior written consent. DBS accepts no liability whatsoever with respect to the use of this document or its contents.
+    Please refer to Disclaimer found at the end of this document
+  </div>
+  <div class="dbs-logo"><span class="star">&#10070;</span><span class="text">DBS</span></div>
+</div>
+
+
+<!-- ============================================================
+     PAGE 3: TARGET PRICE & RATINGS HISTORY + DISCLAIMER START
+     ============================================================ -->
+<div class="page page-break" id="page3">
+  <div class="page-header">DBS Group Research</div>
+
+  <div class="tp-section-title">Target Price &amp; Ratings History</div>
+
+  <div class="tp-layout">
+    <div class="tp-chart">
+      <div class="chart-container">
+        <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Legend -->
+          <line x1="50" y1="12" x2="70" y2="12" stroke="#CC3333" stroke-width="2"/>
+          <text x="73" y="15" font-size="7" fill="#000">SHARE PRICE</text>
+          <line x1="160" y1="12" x2="180" y2="12" stroke="#000000" stroke-width="2"/>
+          <text x="183" y="15" font-size="7" fill="#000">DBSTP</text>
+          <!-- Y-axis labels (price range 100-230) -->
+          <text x="36" y="33" font-size="6" fill="#666" text-anchor="end">230</text>
+          <text x="36" y="63" font-size="6" fill="#666" text-anchor="end">200</text>
+          <text x="36" y="93" font-size="6" fill="#666" text-anchor="end">170</text>
+          <text x="36" y="123" font-size="6" fill="#666" text-anchor="end">140</text>
+          <text x="36" y="153" font-size="6" fill="#666" text-anchor="end">110</text>
+          <text x="36" y="180" font-size="6" fill="#666" text-anchor="end">80</text>
+          <!-- Gridlines -->
+          <line x1="40" y1="30" x2="300" y2="30" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="60" x2="300" y2="60" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="90" x2="300" y2="90" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="120" x2="300" y2="120" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="150" x2="300" y2="150" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="180" x2="300" y2="180" stroke="#E0E0E0" stroke-width="0.5"/>
+          <!-- X-axis labels (Jan 2025 to Jan 2026) -->
+          <text x="40" y="193" font-size="5.5" fill="#666" transform="rotate(-45,40,193)">Jan-25</text>
+          <text x="62" y="193" font-size="5.5" fill="#666" transform="rotate(-45,62,193)">Feb-25</text>
+          <text x="83" y="193" font-size="5.5" fill="#666" transform="rotate(-45,83,193)">Mar-25</text>
+          <text x="105" y="193" font-size="5.5" fill="#666" transform="rotate(-45,105,193)">Apr-25</text>
+          <text x="126" y="193" font-size="5.5" fill="#666" transform="rotate(-45,126,193)">May-25</text>
+          <text x="148" y="193" font-size="5.5" fill="#666" transform="rotate(-45,148,193)">Jun-25</text>
+          <text x="170" y="193" font-size="5.5" fill="#666" transform="rotate(-45,170,193)">Jul-25</text>
+          <text x="191" y="193" font-size="5.5" fill="#666" transform="rotate(-45,191,193)">Aug-25</text>
+          <text x="213" y="193" font-size="5.5" fill="#666" transform="rotate(-45,213,193)">Sep-25</text>
+          <text x="235" y="193" font-size="5.5" fill="#666" transform="rotate(-45,235,193)">Oct-25</text>
+          <text x="256" y="193" font-size="5.5" fill="#666" transform="rotate(-45,256,193)">Nov-25</text>
+          <text x="278" y="193" font-size="5.5" fill="#666" transform="rotate(-45,278,193)">Dec-25</text>
+          <text x="300" y="193" font-size="5.5" fill="#666" transform="rotate(-45,300,193)">Jan-26</text>
+          <!-- Share price line (red) -->
+          <!-- Y mapping: 230->30, 80->180; scale = 150/(230-80) = 1.0; y = 30 + (230-val)*1.0 -->
+          <polyline fill="none" stroke="#CC3333" stroke-width="1.5"
+            points="40,103.3 62,100.1 83,111.1 105,110.7 126,83.2 148,68.0 170,54.8 191,57.2 213,49.0 235,38.3 256,55.0 278,49.0 300,46.4"/>
+          <!-- Target price step-line (black) - initiated at Feb 1, 2026 = $220 -->
+          <line x1="300" y1="40" x2="300" y2="40" stroke="#000000" stroke-width="2"/>
+          <!-- Report marker -->
+          <circle cx="300" cy="46.4" r="7" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+          <text x="300" y="49" font-size="6" fill="#000" text-anchor="middle">1</text>
+          <!-- Target price horizontal line from report date -->
+          <line x1="295" y1="40" x2="305" y2="40" stroke="#000000" stroke-width="2.5"/>
+          <!-- Axes -->
+          <line x1="40" y1="25" x2="40" y2="183" stroke="#999" stroke-width="0.5"/>
+          <line x1="40" y1="183" x2="305" y2="183" stroke="#999" stroke-width="0.5"/>
+        </svg>
+      </div>
+    </div>
+    <div class="tp-table-wrap">
+      <table class="tp-history-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Date of Report</th>
+            <th>Closing Price</th>
+            <th>12-m Target Price</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>01 Feb'26</td><td>191.13</td><td>220.00</td><td>BUY</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tp-attribution">
+    Source: DBS<br>
+    Analyst: DBS US Research Team
+  </div>
+
+  <div class="rating-box">
+    DBS Group Research recommendations are based on an Absolute Total Return* Rating system, defined as follows:<br>
+    <span class="rating-name">STRONG BUY</span> (&gt;20% total return over the next 3 months, with identifiable share price catalysts within this time frame)<br>
+    <span class="rating-name">BUY</span> (&gt;15% total return over the next 12 months for small caps, &gt;10% for large caps)<br>
+    <span class="rating-name">HOLD</span> (-10% to +15% total return over the next 12 months for small caps, -10% to +10% for large caps)<br>
+    <span class="rating-name">FULLY VALUED</span> (negative total return, i.e., &gt; -10% over the next 12 months)<br>
+    <span class="rating-name">SELL</span> (negative total return of &gt; -20% over the next 3 months, with identifiable share price catalysts within this time frame)<br>
+    <div class="footnote">*Share price appreciation + dividends</div>
+  </div>
+
+  <p class="disclaimer-text">Sources for all charts and tables are DBS unless otherwise specified.</p>
+
+  <div class="disclaimer-section-header">GENERAL DISCLOSURE/DISCLAIMER</div>
+  <p class="disclaimer-text">
+    <strong>This report is prepared by DBS Bank Ltd.</strong> This report is solely intended for the clients of DBS Bank Ltd, DBS Vickers Securities (Singapore) Pte Ltd,
+    its respective connected and associated corporations and affiliates only and no part of this document may be (i) copied, photocopied or duplicated
+    in any form or by any means or (ii) redistributed without the prior written consent of DBS Bank Ltd.
+  </p>
+  <p class="disclaimer-text">
+    The research set out in this report is based on information obtained from sources believed to be reliable, but we (which collectively refers to DBS
+    Bank Ltd, DBS Vickers Securities (Singapore) Pte Ltd, its respective connected and associated corporations, affiliates and their respective directors,
+    officers, employees and agents (collectively, the &ldquo;<strong>DBS Group</strong>&rdquo;)) have not conducted due diligence on any of the companies, verified any information
+    or sources or taken into account any other factors which we may consider to be relevant or appropriate in preparing the research. Accordingly,
+    we do not make any representation or warranty as to the accuracy, completeness or correctness of the research set out in this report. Opinions
+    expressed are subject to change without notice. This research is prepared for general circulation. Any recommendation contained in this document
+    does not have regard to the specific investment objectives, financial situation and the particular needs of any specific addressee. This document
+    is for the information of addressees only and is not to be taken in substitution for the exercise of judgement by addressees, who should obtain
+    separate independent legal or financial advice. The DBS Group accepts no liability whatsoever for any direct, indirect and/or consequential loss
+    (including any claims for loss of profit) arising from any use of and/or reliance upon this document and/or further communication given in relation
+    to this document. This document is not to be construed as an offer or a solicitation of an offer to buy or sell any securities. The DBS Group, along
+    with its affiliates and/or persons associated with any of them may from time to time have interests in the securities mentioned in this document.
+    The DBS Group, may have positions in, and may effect transactions in securities mentioned herein and may also perform or seek to perform
+    broking, investment banking and other banking services for these companies.
+  </p>
+  <p class="disclaimer-text">
+    Any valuations, opinions, estimates, forecasts, ratings or risk assessments herein constitutes a judgment as of the date of this report, and there
+    can be no assurance that future results or events will be consistent with any such valuations, opinions, estimates, forecasts, ratings or risk
+    assessments. The information in this document is subject to change without notice, its accuracy is not guaranteed, it may be incomplete or
+    condensed, it may not contain all material information concerning the company (or companies) referred to in this report and the DBS Group is
+    under no obligation to update the information in this report.
+  </p>
+
+  <div class="page-footer">
+    Disclaimer: The information contained in this document is intended only for use by the person to whom it has been delivered and should not be disseminated
+    or distributed to third parties without our prior written consent. DBS accepts no liability whatsoever with respect to the use of this document or its contents.
+    Please refer to Disclaimer found at the end of this document
+  </div>
+  <div class="dbs-logo"><span class="star">&#10070;</span><span class="text">DBS</span></div>
+</div>
+
+
+<!-- ============================================================
+     PAGE 4: DISCLAIMER CONTINUED
+     ============================================================ -->
+<div class="page page-break" id="page4">
+  <div class="page-header">DBS Group Research</div>
+
+  <p class="disclaimer-text">
+    This report is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any
+    locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation.
+  </p>
+
+  <div class="disclaimer-section-header">ANALYST CERTIFICATION</div>
+  <p class="disclaimer-text">
+    The research analyst(s) primarily responsible for the content of this research report, in part or in whole, certifies that the views about the
+    companies and their securities expressed in this report accurately reflect his/her personal views. The analyst(s) also certifies that no part of
+    his/her compensation was, is, or will be, directly or indirectly, related to specific recommendations or views expressed in the report. The research
+    analyst(s) primarily responsible for the content of this research report, in part or in whole, certifies that he or his associate does not serve as an
+    officer of the issuer or the new combinator of any of the entities reviewed in this report.
+  </p>
+  <p class="disclaimer-text">
+    As of the date of this report, the analyst(s) and his/her spouse and/or relatives who are financially dependent on the analyst(s), do not hold
+    interests in the securities recommended in this report (&ldquo;i&rdquo; denotes combinator).
+  </p>
+
+  <div class="disclaimer-section-header">COMPANY-SPECIFIC / REGULATORY DISCLOSURES</div>
+  <p class="disclaimer-text">
+    1.&nbsp;&nbsp;DBS Bank Ltd, DBS Vickers Securities (Singapore) Pte Ltd (&ldquo;DBSVS&rdquo;), their subsidiaries and/or other affiliates do not have a proprietary
+    position in the securities recommended in this report as of 31 Jan 2026.
+  </p>
+
+  <div class="disclaimer-sub-header">Compensation for investment banking services:</div>
+  <p class="disclaimer-text">
+    2.&nbsp;&nbsp;DBSVUSA does not have its own different investment banking or other advisory fee for services rendered as compared to DBS Bank Ltd.
+  </p>
+
+  <div class="disclaimer-sub-header">Disclosure of previous investment recommendation produced:</div>
+  <p class="disclaimer-text">
+    3.&nbsp;&nbsp;DBS Bank Ltd, DBS Vickers Securities (Singapore) Pte Ltd (&ldquo;DBSVS&rdquo;), their subsidiaries and/or other affiliates may have published
+    other investment recommendations in respect of the same securities / instruments recommended in this research report during the preceding
+    12 months. Please contact the primary analyst listed on the first page of this report to view previous investment recommendations published by
+    DBS Bank Ltd, DBS Vickers Securities (Singapore) Pte Ltd (&ldquo;DBSVS&rdquo;), their subsidiaries and/or other affiliates in the preceding 12 months.
+  </p>
+
+  <div class="page-footer">
+    Disclaimer: The information contained in this document is intended only for use by the person to whom it has been delivered and should not be disseminated
+    or distributed to third parties without our prior written consent. DBS accepts no liability whatsoever with respect to the use of this document or its contents.
+    Please refer to Disclaimer found at the end of this document
+  </div>
+  <div class="dbs-logo"><span class="star">&#10070;</span><span class="text">DBS</span></div>
+</div>
+
+
+<!-- ============================================================
+     PAGE 5: RESTRICTIONS ON DISTRIBUTION
+     ============================================================ -->
+<div class="page page-break" id="page5">
+  <div class="page-header">DBS Group Research</div>
+
+  <div class="disclaimer-section-header">RESTRICTIONS ON DISTRIBUTION</div>
+
+  <table class="restrictions-table">
+    <tr>
+      <td>General</td>
+      <td>This report is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation.</td>
+    </tr>
+    <tr>
+      <td>Australia</td>
+      <td>This report is being distributed in Australia by DBS Bank Ltd, DBS Vickers Securities (Singapore) Pte Ltd (&ldquo;DBSVS&rdquo;) or DBSV HK. DBS Bank Ltd holds Australian Financial Services Licence no. 475946.</td>
+    </tr>
+    <tr>
+      <td>Hong Kong</td>
+      <td>This report has been prepared by a person(s) who is not licensed by the Securities and Futures Commission to carry on the regulated activity of advising on securities in Hong Kong pursuant to the Securities and Futures Ordinance (Chapter 571 of the Laws of Hong Kong). This report is being distributed in Hong Kong and is attributable to DBS Bank (Hong Kong) Limited, a registered institution registered with the Securities and Futures Commission to carry on Type 1 (Dealing in Securities), Type 4 (Advising on Securities) and Type 6 (Advising on Corporate Finance) regulated activities.</td>
+    </tr>
+    <tr>
+      <td>Indonesia</td>
+      <td>This report is being distributed in Indonesia by PT DBS Vickers Sekuritas Indonesia.</td>
+    </tr>
+    <tr>
+      <td>Malaysia</td>
+      <td>This report is distributed in Malaysia by AllianceDBS Research Sdn Bhd (&ldquo;ADBSR&rdquo;). Recipients of this report, received from ADBSR are to contact the undersigned at 603-2604 3333 in respect of any matters arising from or in connection with this report.</td>
+    </tr>
+    <tr>
+      <td>Singapore</td>
+      <td>This report is distributed in Singapore by DBS Bank Ltd (Company Regn. No. 196800306E) or DBSVS (Company Regn No. 198600294G), both of which are Exempt Financial Advisers as defined in the Financial Advisers Act and regulated by the Monetary Authority of Singapore. DBS Bank Ltd and/or DBSVS, may distribute reports produced by its respective foreign entities, associates or other third parties pursuant to an arrangement under Regulation 32C of the Financial Advisers Regulations.</td>
+    </tr>
+    <tr>
+      <td>Thailand</td>
+      <td>This report is being distributed in Thailand by DBS Vickers Securities (Thailand) Co Ltd.</td>
+    </tr>
+    <tr>
+      <td>United Kingdom</td>
+      <td>This report is produced by DBS Bank Ltd which is regulated by the Monetary Authority of Singapore. This report is disseminated in the United Kingdom by DBS Bank Ltd, London Branch (&ldquo;DBS UK&rdquo;). DBS UK is authorised by the Prudential Regulation Authority and is subject to regulation by the Financial Conduct Authority and limited regulation by the Prudential Regulation Authority. Details about the extent of our regulation by the Prudential Regulation Authority are available from us on request.</td>
+    </tr>
+    <tr>
+      <td>Dubai</td>
+      <td>This report is provided by DBS Bank Ltd (Company Regn. No. 196800306E) having its office at the Dubai International Financial Centre (Registered No. 0079). This report is being distributed in the Dubai International Financial Centre by DBS Bank Ltd, DIFC Branch.</td>
+    </tr>
+    <tr>
+      <td>United States</td>
+      <td>This report was prepared by DBS Bank Ltd. DBSVUSA did not participate in its preparation. The research analyst(s) named on this report are not registered as research analysts with FINRA and are not associated persons of DBSVUSA. The research analyst(s) are not subject to FINRA Rule 2241 restrictions on analyst compensation, communications with a subject company, public appearances and trading securities held by a research analyst. This report is being distributed in the United States by DBSVUSA, which accepts responsibility for its contents. This report may only be distributed to Major U.S. Institutional Investors (as defined in SEC Rule 15a-6) and to such other institutional investors and qualified purchasers as DBSVUSA may authorize.</td>
+    </tr>
+    <tr>
+      <td>Other jurisdictions</td>
+      <td>In any other jurisdictions, except if otherwise restricted by laws or regulations, this report is intended only for qualified, professional, institutional or sophisticated investors as defined in the laws and regulations of such jurisdictions.</td>
+    </tr>
+  </table>
+
+  <div class="page-footer">
+    Disclaimer: The information contained in this document is intended only for use by the person to whom it has been delivered and should not be disseminated
+    or distributed to third parties without our prior written consent. DBS accepts no liability whatsoever with respect to the use of this document or its contents.
+    Please refer to Disclaimer found at the end of this document
+  </div>
+  <div class="dbs-logo"><span class="star">&#10070;</span><span class="text">DBS</span></div>
+</div>
+
+
+<!-- ============================================================
+     PAGE 6: ADDITIONAL DISCLAIMERS
+     ============================================================ -->
+<div class="page page-break" id="page6">
+  <div class="page-header">DBS Group Research</div>
+
+  <p class="disclaimer-text">
+    DBS Bank Ltd, 12 Marina Boulevard, Marina Bay Financial Centre Tower 3, Singapore 018982. Tel: 65-6878 8888. Company Registration No. 196800306E.
+  </p>
+  <p class="disclaimer-text">
+    DBS Bank Ltd., Hong Kong Branch, a company incorporated in Singapore with limited liability. 13th Floor One Island East, 18 Westlands Road, Quarry Bay, Hong Kong.
+  </p>
+  <p class="disclaimer-text">
+    DBS Bank (Hong Kong) Limited, a company incorporated in Hong Kong with limited liability. 11th Floor, The Center, 99 Queen&rsquo;s Road Central, Central, Hong Kong.
+  </p>
+  <p class="disclaimer-text">
+    Virtual different entities listed above (different entities individually form the basis for research report preparation including data collection, compilation and report generating).
+    DBS Bank Ltd, DBS Vickers Securities (Singapore) Pte Ltd, its subsidiaries and/or other affiliates hereby certify that they have no affiliation with, or do not exert any control over,
+    any other research entities.
+  </p>
+  <p class="disclaimer-text">
+    The information herein is not directed to, or intended for distribution to or use by, persons who are not qualified to invest in securities, or are citizens or residents of
+    jurisdictions where the distribution of this information is restricted or prohibited.
+  </p>
+  <p class="disclaimer-text">
+    Securities, financial instruments or strategies mentioned herein may not be suitable for all investors. The opinions and recommendations herein do not take into account
+    individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients.
+    The recipient of this report must make its own independent decisions regarding any securities or financial instruments mentioned herein.
+  </p>
+  <p class="disclaimer-text">
+    The DBS Group along with its affiliates and/or persons associated with any of them may from time to time have interests in the securities mentioned in this document.
+    The DBS Group may have positions in, and may effect transactions in securities mentioned herein and may also perform or seek to perform broking, investment banking and other
+    banking services for these companies.
+  </p>
+  <p class="disclaimer-text">
+    Any valuations, opinions, estimates, forecasts, ratings or risk assessments herein constitutes a judgment as of the date of this report, and there can be no assurance that future
+    results or events will be consistent with any such valuations, opinions, estimates, forecasts, ratings or risk assessments.
+  </p>
+
+  <div class="page-footer">
+    Disclaimer: The information contained in this document is intended only for use by the person to whom it has been delivered and should not be disseminated
+    or distributed to third parties without our prior written consent. DBS accepts no liability whatsoever with respect to the use of this document or its contents.
+    Please refer to Disclaimer found at the end of this document
+  </div>
+  <div class="dbs-logo"><span class="star">&#10070;</span><span class="text">DBS</span></div>
+</div>
+
+
+<!-- ============================================================
+     PAGE 7: REGIONAL OFFICES
+     ============================================================ -->
+<div class="page page-break" id="page7">
+  <div class="page-header">DBS Group Research</div>
+
+  <div class="offices-title">DBS REGIONAL RESEARCH OFFICES</div>
+  <div class="offices-grid">
+    <div class="office">
+      <div class="office-region">HONG KONG</div>
+      <div class="office-name">DBS Bank (Hong Kong) Ltd</div>
+      <div>Contact: Dennis Lam</div>
+      <div>13th Floor One Island East,</div>
+      <div>18 Westlands Road,</div>
+      <div>Quarry Bay, Hong Kong</div>
+      <div>Tel: 852 3668 4181</div>
+      <div>Fax: 852 2521 1812</div>
+      <div>e-mail: dbsvhk@dbs.com</div>
+
+      <div class="office-region" style="margin-top:18px;">INDONESIA</div>
+      <div class="office-name">PT DBS Vickers Sekuritas (Indonesia)</div>
+      <div>Contact: William Simadiputra</div>
+      <div>DBS Bank Tower</div>
+      <div>Ciputra World 1, 32/F</div>
+      <div>Jl. Prof. Dr. Satrio Kav. 3-5</div>
+      <div>Jakarta 12940, Indonesia</div>
+      <div>Tel: 62 21 3003 4900</div>
+      <div>Fax: 6221 3003 4943</div>
+      <div>e-mail: indonesiaresearch@dbs.com</div>
+    </div>
+    <div class="office">
+      <div class="office-region">SINGAPORE</div>
+      <div class="office-name">DBS Bank Ltd</div>
+      <div>Contact: Andy Sim</div>
+      <div>12 Marina Boulevard,</div>
+      <div>Marina Bay Financial Centre Tower 3</div>
+      <div>Singapore 018982</div>
+      <div>Tel: 65 6878 8888</div>
+      <div>e-mail: groupresearch@dbs.com</div>
+      <div>Company Regn. No. 196800306E</div>
+
+      <div class="office-region" style="margin-top:18px;">THAILAND</div>
+      <div class="office-name">DBS Vickers Securities (Thailand) Co Ltd</div>
+      <div>Contact: Chanpen Sirithanarattanakul</div>
+      <div>989 Siam Piwat Tower Building,</div>
+      <div>9th, 14th-15th Floor</div>
+      <div>Rama 1 Road, Pathumwan,</div>
+      <div>Bangkok Thailand 10330</div>
+      <div>Tel. 66 2 857 7831</div>
+      <div>Fax: 66 2 658 1269</div>
+      <div>e-mail: DBSVTresearch@dbs.com</div>
+      <div>Company Regn. No 0105539127012</div>
+      <div>Securities and Exchange Commission, Thailand</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    Disclaimer: The information contained in this document is intended only for use by the person to whom it has been delivered and should not be disseminated
+    or distributed to third parties without our prior written consent. DBS accepts no liability whatsoever with respect to the use of this document or its contents.
+    Please refer to Disclaimer found at the end of this document
+  </div>
+  <div class="dbs-logo"><span class="star">&#10070;</span><span class="text">DBS</span></div>
+</div>
+
+</body>
+</html>
